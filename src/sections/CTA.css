@@ -1,0 +1,130 @@
+.cta-section {
+  position: relative;
+  padding: 140px 0;
+  background: var(--black);
+  text-align: center;
+  overflow: hidden;
+}
+
+.cta-glow-left {
+  position: absolute;
+  top: 50%;
+  left: -150px;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(223,65,25,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-glow-right {
+  position: absolute;
+  top: 50%;
+  right: -150px;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(223,65,25,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-logo {
+  display: flex;
+  justify-content: center; /* This ensures the logo stays perfectly centered */
+  margin-bottom: 28px;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Add this new rule to control the image size */
+.cta-logo img {
+  height: 80px; /* Change this number to make it bigger or smaller */
+  width: auto;
+  object-fit: contain;
+}
+
+.cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5vw, 80px);
+  line-height: 1;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+
+.cta-sub {
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 12px;
+}
+
+.cta-available {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 40px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.store-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 28px;
+  background: rgba(255,255,255,0.06);
+  border: 1.5px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+  color: var(--white);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.store-btn:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(223,65,25,0.35);
+}
+
+.store-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.store-label {
+  font-family: var(--font-text);
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.store-name {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .cta-section { padding: 100px 0; }
+  .store-btn { padding: 14px 22px; }
+}

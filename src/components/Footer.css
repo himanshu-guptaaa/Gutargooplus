@@ -1,0 +1,171 @@
+.footer {
+  background: var(--black-200);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+
+/* Marquee */
+.footer-marquee {
+  overflow: hidden;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-marquee-track {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  animation: marqueeLeft 30s linear infinite;
+}
+
+.footer-word {
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.15);
+  padding: 0 16px;
+  white-space: nowrap;
+}
+
+.footer-dot {
+  color: var(--primary);
+  padding: 0 8px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Main */
+.footer-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px;
+  padding: 60px 0;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo-icon {
+  font-size: 28px;
+}
+/* Add this to control the footer image size */
+.footer-logo-img img {
+  height: 28px; /* This keeps it small and elegant, similar to the navbar */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Optional: Make it even smaller on mobile phones */
+@media (max-width: 768px) {
+  .footer-logo-img img {
+    height: 20px;
+  }
+}
+
+.footer-logo-text {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--white);
+}
+
+.footer-made {
+  font-family: var(--font-text);
+  font-size: 14px;
+  color: rgba(255,255,255,0.35);
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+.footer-logo{
+  height: 24px; /* Adjust this value to make your logo larger or smaller */
+  width: auto;
+  object-fit: contain;
+}
+.footer-logo-img{
+  height: 24px; /* Adjust this value to make your logo larger or smaller */
+  width: auto;
+  object-fit: contain;
+
+}
+.social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.4);
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: rgba(223,65,25,0.1);
+}
+
+.footer-group-title {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links a {
+  font-family: var(--font-text);
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--white);
+}
+
+/* Bottom */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-bottom p {
+  font-family: var(--font-text);
+  font-size: 13px;
+  color: rgba(255,255,255,0.25);
+}
+
+@media (max-width: 900px) {
+  .footer-main { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+
+@media (max-width: 600px) {
+  .footer-main { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+}

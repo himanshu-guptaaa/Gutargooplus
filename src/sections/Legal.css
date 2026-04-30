@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+.legal-page {
+  background-color: #0b0b0b;
+  min-height: 100vh;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  padding-top: 120px; /* Pushes content down so navbar doesn't cover it */
+  padding-bottom: 80px;
+}
+
+.legal-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 30px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.legal-container h1 {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 15px;
+}
+
+.legal-container h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #df4119; /* Your brand orange */
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+.legal-container p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 20px;
+}
+
+.legal-container ul {
+  margin-bottom: 20px;
+  padding-left: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.8;
+}
+
+.legal-container strong {
+  color: #df4119;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .legal-page {
+    padding-top: 100px;
+  }
+  .legal-container {
+    padding: 25px 20px;
+    margin: 0 15px;
+  }
+  .legal-container h2 {
+    font-size: 20px;
+  }
+  .legal-container p {
+    font-size: 15px;
+  }
+}

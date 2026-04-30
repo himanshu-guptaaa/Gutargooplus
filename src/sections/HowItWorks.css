@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+.pricing-section {
+  position: relative;
+  padding: 120px 20px;
+  background: #0d0d0d;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+.pricing-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(223,65,25,0.08) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pricing-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.section-tag {
+  display: inline-block;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.7);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.pricing-title {
+  position: relative;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+  height: 70px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-text {
+  position: absolute;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.title-text.hide {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.title-text.reveal-text {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.title-text.reveal-text.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.text-primary {
+  color: #df4119;
+}
+
+.pricing-subtitle {
+  color: rgba(255,255,255,0.5);
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+/* --- Cards Layout --- */
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: stretch;
+}
+
+.pricing-card {
+  position: relative;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+  padding: 40px 30px;
+  transition: all 0.5s ease;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-card.popular {
+  background: rgba(223,65,25,0.03);
+  border: 1px solid rgba(223,65,25,0.2);
+  transform: scale(1.03);
+}
+
+.pricing-card.free-mode {
+  border-color: rgba(223,65,25,0.4);
+  box-shadow: 0 10px 40px rgba(223,65,25,0.1);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #df4119;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 100px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.plan-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.plan-quality {
+  background: rgba(255,255,255,0.1);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* --- The Magic Pricing Animation --- */
+.price-wrapper {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 35px;
+  height: 80px;
+}
+
+.price-currency {
+  font-size: 28px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  margin-right: 4px;
+  transition: color 0.5s ease;
+}
+
+.price-amount {
+  position: relative;
+  font-size: 56px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  transition: color 0.5s ease;
+}
+
+.price-period {
+  font-size: 16px;
+  color: rgba(255,255,255,0.5);
+  margin-left: 8px;
+  transition: opacity 0.5s ease;
+}
+
+.strike-line {
+  position: absolute;
+  top: 50%;
+  left: -5%;
+  width: 0%;
+  height: 5px;
+  background: #df4119;
+  transform: translateY(-50%) rotate(-10deg);
+  border-radius: 10px;
+  z-index: 2;
+  box-shadow: 0 2px 10px rgba(223,65,25,0.5);
+}
+
+.price-amount.struck {
+  color: rgba(255,255,255,0.3);
+}
+
+.price-amount.struck .strike-line {
+  width: 110%;
+  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.price-free {
+  position: absolute;
+  left: 30px;
+  font-size: 64px;
+  font-weight: 800;
+  color: #df4119;
+  opacity: 0;
+  transform: translateY(-30px) scale(1.5);
+  text-shadow: 0 5px 20px rgba(223,65,25,0.4);
+  pointer-events: none;
+}
+
+.price-free.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
+}
+
+.free-mode .price-period {
+  opacity: 0.2;
+}
+
+/* --- Features List --- */
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+  flex-grow: 1;
+}
+
+.plan-features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255,255,255,0.7);
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+
+.plan-features svg {
+  width: 20px;
+  height: 20px;
+  color: #df4119;
+}
+
+/* --- Buttons --- */
+.btn-plan {
+  width: 100%;
+  padding: 16px;
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.popular .btn-plan {
+  background: #fff;
+  color: #000;
+}
+
+.btn-plan.btn-free {
+  background: #df4119;
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(223,65,25,0.3);
+}
+
+.btn-plan:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .pricing-cards {
+    gap: 20px;
+  }
+  .pricing-card {
+    padding: 30px 20px;
+  }
+  .price-amount { font-size: 48px; }
+  .price-free { font-size: 56px; left: 25px; }
+}
+
+@media (max-width: 768px) {
+  .pricing-section {
+    padding: 80px 20px;
+  }
+  .pricing-title {
+    font-size: 32px;
+    height: auto;
+    min-height: 80px;
+  }
+  .pricing-cards {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .pricing-card.popular {
+    transform: scale(1);
+  }
+  .hero-cta {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+}

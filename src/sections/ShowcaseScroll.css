@@ -1,0 +1,75 @@
+.showcase {
+  padding: 120px 0;
+  background: var(--black);
+  overflow: hidden;
+}
+
+.showcase-header {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 0 24px;
+}
+
+.showcase-title {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1.1;
+  color: var(--white);
+  margin-top: 16px;
+}
+
+.scroll-row {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.scroll-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: marqueeLeft 30s linear infinite;
+}
+
+.scroll-track--reverse {
+  animation: marqueeRight 35s linear infinite;
+}
+
+.scroll-card {
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: transform 0.4s ease;
+}
+
+.scroll-card:hover {
+  transform: scale(1.04);
+}
+
+.scroll-card--portrait {
+  width: 200px;
+  height: 300px;
+}
+
+.scroll-card--landscape {
+  width: 360px;
+  height: 200px;
+}
+
+.scroll-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.85);
+  transition: filter 0.4s ease;
+}
+
+.scroll-card:hover img {
+  filter: brightness(1);
+}
+
+@media (max-width: 768px) {
+  .showcase { padding: 80px 0; }
+  .scroll-card--portrait { width: 150px; height: 225px; }
+  .scroll-card--landscape { width: 260px; height: 146px; }
+}
