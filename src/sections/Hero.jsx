@@ -6,7 +6,7 @@ const movies = [
   '/afsaan.jpg',
   '/badcat.jpg',
   '/01NCR.jpg',
-  '/public/alien frnk 2.jpg',
+  '/alien frnk 2.jpg',
 ];
 
 const words = [
