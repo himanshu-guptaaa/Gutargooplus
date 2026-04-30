@@ -13,7 +13,7 @@ const CTA = () => {
           </h2>
           <p className="cta-sub">
             Snackable. Fictional. Emotional. Real.<br />
-            Welcome to Chai Shots.
+            Welcome to Gutargoo+.
           </p>
           <p className="cta-available">Available for iOS & Android</p>
           <div className="hero-cta">
