@@ -1,16 +1,8 @@
 import { useEffect, useRef } from 'react';
 import './Clap.css';
 
-const clapImages = [
-  'https://framerusercontent.com/images/6YNskoJWIU0Tz3yUlRvhKIgcU.png?width=1300&height=400',
-  'https://framerusercontent.com/images/yJ7T7jq4ziwZXXA6buf5JYAdyYA.png?width=1300&height=400',
-  'https://framerusercontent.com/images/dP3oZxrGrv5IN1vehORQrsWTLpM.png?width=1300&height=400',
-];
-
-const Clap = () => {
+const LocalOttSection = () => {
   const ref = useRef(null);
-  const imgRef = useRef(null);
-  const imgIndex = useRef(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -26,71 +18,59 @@ const Clap = () => {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      imgIndex.current = (imgIndex.current + 1) % clapImages.length;
-      if (imgRef.current) {
-        imgRef.current.style.opacity = '0';
-        setTimeout(() => {
-          if (imgRef.current) {
-            imgRef.current.src = clapImages[imgIndex.current];
-            imgRef.current.style.opacity = '1';
-          }
-        }, 300);
-      }
-    }, 2500);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section className="clap" ref={ref}>
       <div className="container">
         <div className="clap-inner">
+          {/* Left Side: Content & USP */}
           <div className="clap-text">
-            <div className="clap-badge reveal">✨ New Feature</div>
+            <div className="clap-badge reveal">✨ Regional Cinema</div>
             <h2 className="clap-title reveal">
-              Introducing<br />
-              <span>Local Artist.</span>
+              Celebrate<br />
+              <span>Local Artists.</span>
             </h2>
             <p className="clap-sub reveal">
-              We support local movies and Production. <strong>A Place Where everyone is welcome.</strong>
+              We support state-level movies and production houses. <strong>A platform where your local stories shine.</strong>
             </p>
             <p className="clap-desc reveal">
-              Clap lets you send love, notes, and even money directly to creators.
+              Discover movies and web series produced right in your area, crafted beautifully in your native language. We give local talent the spotlight they deserve.
             </p>
 
             <div className="clap-points reveal">
               <div className="clap-point">
-                <span className="clap-point-icon">✍️</span>
-                <span>Write a short note (up to 500 characters)</span>
+                <span className="clap-point-icon">🎬</span>
+                <span>Exclusive state-wise movies and series</span>
               </div>
               <div className="clap-point">
-                <span className="clap-point-icon">💰</span>
-                <span>Send a tip (₹20 to ₹10,000)</span>
+                <span className="clap-point-icon">🗣️</span>
+                <span>Stream content in your own native language</span>
               </div>
               <div className="clap-point">
-                <span className="clap-point-icon">❤️</span>
-                <span>Support creators directly</span>
+                <span className="clap-point-icon">🚀</span>
+                <span>Empower and support regional production houses</span>
               </div>
             </div>
 
             <div className="clap-formula reveal">
-              Every clap =&nbsp;<span>Applause</span>&nbsp;+&nbsp;<span>Recognition</span>&nbsp;+&nbsp;<span>Income</span>
+              Every stream =&nbsp;<span>Culture</span>&nbsp;+&nbsp;<span>Recognition</span>&nbsp;+&nbsp;<span>Growth</span>
             </div>
 
             <p className="clap-tagline reveal">
-              Stories aren't built by algorithms. They're built by people.<br />
-              <strong>Clap is how you say thank you.</strong>
+              Stories aren't built by algorithms. They're born from culture.<br />
+              <strong>Watch what feels like home.</strong>
             </p>
           </div>
 
+          {/* Right Side: Continuous Video */}
           <div className="clap-visual">
             <div className="clap-phone-wrap">
-              <img
-                ref={imgRef}
-                src={clapImages[0]}
-                alt="Clap feature"
-                className="clap-img"
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                src="/MapSquare.mp4"
+                className="clap-media"
               />
               <div className="clap-glow" />
             </div>
@@ -101,4 +81,4 @@ const Clap = () => {
   );
 };
 
-export default Clap;
+export default LocalOttSection;

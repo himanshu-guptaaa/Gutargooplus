@@ -44,7 +44,7 @@ const About = () => {
                 for a background video to automatically play on mobile devices.
               */}
               <video 
-                src="/video.mp4" 
+                src="/Phone scroll.mp4" 
                 className="about-video"
                 autoPlay 
                 loop 
