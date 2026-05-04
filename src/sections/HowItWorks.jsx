@@ -81,20 +81,35 @@ const HowItWorks = () => {
                 <span className="plan-quality">{plan.quality}</span>
               </div>
 
+              {/* --- UPDATED PRICING WRAPPER --- */}
               <div className="price-wrapper">
-                <div className="price-currency">₹</div>
                 
-                <div className={`price-amount ${isRevealed ? 'struck' : ''}`}>
-                  {plan.originalPrice}
-                  <div className="strike-line"></div>
+                {/* 1. Minimized original price with white strike */}
+                <div className={`price-old-minimized ${isRevealed ? 'show' : ''}`}>
+                  ₹{plan.originalPrice}
+                  <span className="strike-white"></span>
                 </div>
-                
-                <div className="price-period">/mo</div>
 
-                <div className={`price-free ${isRevealed ? 'show' : ''}`}>
-                  0
+                {/* 2. Main price display row */}
+                <div className="price-main-row">
+                  <div className="price-currency"></div>
+                  
+                  <div className="price-amount-switcher">
+                    {/* Old Price fades out and shrinks */}
+                    <div className={`price-amount-large ${!isRevealed ? 'show' : 'hide'}`}>
+                      {plan.originalPrice}
+                    </div>
+                    {/* Big 0 fades in identically */}
+                    <div className={`price-amount-large zero ${isRevealed ? 'show' : 'hide'}`}>
+                    Free
+                    </div>
+                  </div>
+                  
+                  <div className="price-period">/mo</div>
                 </div>
+
               </div>
+              {/* --- END UPDATED PRICING WRAPPER --- */}
 
               <ul className="plan-features">
                 {plan.features.map((feature, idx) => (

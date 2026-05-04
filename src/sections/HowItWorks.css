@@ -157,13 +157,56 @@
   color: #fff;
 }
 
-/* --- The Magic Pricing Animation --- */
+/* --- The Magic Pricing Animation (NEW) --- */
 .price-wrapper {
   position: relative;
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
   margin-bottom: 35px;
-  height: 80px;
+  height: 80px; 
+  justify-content: flex-end; /* Keeps the main price anchored at the bottom */
+}
+
+/* The minimized original price that appears above */
+.price-old-minimized {
+  position: absolute;
+  top: -10px; 
+  left: 32px; 
+  font-size: 18px; 
+  color: rgba(255,255,255,0.4); 
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.price-old-minimized.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* The clean white strike-through line */
+.strike-white {
+  position: absolute;
+  top: 50%;
+  left: -5%;
+  width: 0;
+  height: 2px;
+  background-color: #ffffff;
+  transition: width 0.4s ease-out 0.3s; /* Slight delay for a swoop effect */
+}
+
+.price-old-minimized.show .strike-white {
+  width: 110%; 
+}
+
+/* The main layout row for the big price */
+.price-main-row {
+  display: flex;
+  align-items: baseline;
 }
 
 .price-currency {
@@ -171,16 +214,40 @@
   font-weight: 600;
   color: rgba(255,255,255,0.5);
   margin-right: 4px;
-  transition: color 0.5s ease;
 }
 
-.price-amount {
+/* Switcher container ensures layout doesn't shift when numbers swap */
+.price-amount-switcher {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 56px; 
+}
+
+/* The big price numbers */
+.price-amount-large {
   font-size: 56px;
   font-weight: 800;
   color: #fff;
   line-height: 1;
-  transition: color 0.5s ease;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Animation states for a smooth swap */
+.price-amount-large.show {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  position: relative;
+}
+
+.price-amount-large.hide {
+  opacity: 0;
+  transform: scale(0.6) translateY(20px);
+  position: absolute; 
+}
+
+.price-amount-large.zero {
+  color: inherit; 
 }
 
 .price-period {
@@ -188,46 +255,6 @@
   color: rgba(255,255,255,0.5);
   margin-left: 8px;
   transition: opacity 0.5s ease;
-}
-
-.strike-line {
-  position: absolute;
-  top: 50%;
-  left: -5%;
-  width: 0%;
-  height: 5px;
-  background: #df4119;
-  transform: translateY(-50%) rotate(-10deg);
-  border-radius: 10px;
-  z-index: 2;
-  box-shadow: 0 2px 10px rgba(223,65,25,0.5);
-}
-
-.price-amount.struck {
-  color: rgba(255,255,255,0.3);
-}
-
-.price-amount.struck .strike-line {
-  width: 110%;
-  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.price-free {
-  position: absolute;
-  left: 30px;
-  font-size: 64px;
-  font-weight: 800;
-  color: #df4119;
-  opacity: 0;
-  transform: translateY(-30px) scale(1.5);
-  text-shadow: 0 5px 20px rgba(223,65,25,0.4);
-  pointer-events: none;
-}
-
-.price-free.show {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
 }
 
 .free-mode .price-period {
@@ -296,8 +323,16 @@
   .pricing-card {
     padding: 30px 20px;
   }
-  .price-amount { font-size: 48px; }
-  .price-free { font-size: 56px; left: 25px; }
+  .price-amount-large { 
+    font-size: 48px; 
+  }
+  .price-amount-switcher {
+    height: 48px;
+  }
+  .price-old-minimized {
+    font-size: 15px;
+    left: 28px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -318,10 +353,9 @@
     transform: scale(1);
   }
   .hero-cta {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  align-items: center;
-}
-
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+  }
 }

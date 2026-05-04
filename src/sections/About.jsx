@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import './About.css';
 
+
 const About = () => {
   // Logic to handle the .reveal CSS animation when scrolling
   const revealRefs = useRef([]);
@@ -65,6 +66,7 @@ const About = () => {
             <p className="about-text about-text--bold reveal" ref={addToRefs}>
               Experience stories that feel close to home. <span className="text-primary">Original Series</span> in your language.
             </p>
+
             
             <p className="about-text reveal" ref={addToRefs}>
               We bring you high-quality, addictive short series tailored for your phone. Whether you have 5 minutes or 5 hours, dive into a world of endless entertainment.
@@ -72,14 +74,14 @@ const About = () => {
 
             <div className="about-stats reveal" ref={addToRefs}>
               <div className="stat">
-                <span className="stat-number">50<span className="stat-unit">+</span></span>
+                <span className="stat-number">11<span className="stat-unit">+</span></span>
                 <span className="stat-label">Original Shows</span>
               </div>
               
               <div className="stat-divider"></div>
               
               <div className="stat">
-                <span className="stat-number">10<span className="stat-unit">M+</span></span>
+                <span className="stat-number">142<span className="stat-unit">K+</span></span>
                 <span className="stat-label">Active Users</span>
               </div>
             </div>
@@ -90,5 +92,6 @@ const About = () => {
     </section>
   );
 };
+
 
 export default About;
