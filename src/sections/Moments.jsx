@@ -3,27 +3,27 @@ import './Moments.css';
 
 const moments = [
   {
-    img: '/landscape alien frank.jpg',
+    img: '/landscape.webp',
     title: 'Waiting for a cab?',
     sub: 'Watch an episode.',
   },
   {
-    img: '/landscape badcat.jpg',
+    img: '/landscape (2).webp',
     title: 'Coffee break at work?',
     sub: 'Two minutes of drama.',
   },
   {
-    img: '/landscapeafsaan.jpg',
+    img: '/landscape (3).webp',
     title: 'Stuck in traffic?',
     sub: 'Let the drama continue.',
   },
   {
-    img: '/networker3.jpeg',
+    img: '/landscape (4).webp',
     title: 'In the lift?',
     sub: 'Just enough time for a story.',
   },
   {
-    img: '/Landscape1.jpg',
+    img: '/Landscape (5).webp',
     title: 'Lying in bed?',
     sub: 'End your day with a short drama.',
   },

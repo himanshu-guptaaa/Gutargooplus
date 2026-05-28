@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 import './Hero.css';
 
 const movies = [
-  '/network.jpg', 
-  '/afsaan.jpg',
-  '/badcat.jpg',
-  '/01NCR.jpg',
-  '/alien frnk 2.jpg',
+  '/networker 2.webp', 
+  '/ad2.webp',
+  '/ad3.webp',
+  '/ad4.webp',
+  '/ad5.webp',
 ];
 
 const words = [

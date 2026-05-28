@@ -1,27 +1,30 @@
 import './ShowcaseScroll.css';
 
 const row1 = [
-  '/01NCR.jpg',
-  '/afsaan.jpg',
-  '/badcat.jpg',
-  '/network.jpg',
+  '/networker 2.webp',
+  '/ad1.webp',
+  '/ad2.webp',
+  '/ad3.webp',
+ '/networker 2.webp',
+  '/ad5.webp',
+  '/ad6.webp',
+  '/00.webp',
   
-  '/01NCR.jpg',
-  '/afsaan.jpg',
-  '/badcat.jpg',
-  '/network.jpg',
-  '/landscape alien frank.jpg',
 
+  
 ];
 
 const row2 = [
 
-  '/networker3.jpeg',
-  '/landscapeafsaan.jpg',
-  '/Landscape1.jpg',
-  '/landscape.jpg',
-  '/landscape badcat.jpg',
-  '/landscape alien frank.jpg',
+ '/networker 3.webp',
+  '/landscape.webp',
+  '/landscape (2).webp',
+  '/landscape (3).webp',
+  '/networker 3.webp',
+  '/Landscape (5).webp',
+  '/landscape (6).webp',
+  '/landscape alien frank.webp',
+  'landscape.webp',
 ];
 
 const ShowcaseScroll = () => {
